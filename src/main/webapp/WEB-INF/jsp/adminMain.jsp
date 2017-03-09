@@ -103,7 +103,7 @@
                     <label for="firstName">First name</label> <textarea class="form-control" rows="1" id="firstName"><@= user.firstName @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last name</label> <textarea class="form-control" rows="1" id="lastName"><@= user.firstName @></textarea>
+                    <label for="lastName">Last name</label> <textarea class="form-control" rows="1" id="lastName"><@= user.lastName @></textarea>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label> <textarea class="form-control" rows="1" id="email"><@= user.email @></textarea>
