@@ -47,7 +47,7 @@
             <tbody>
 
             <@ _.each(users, function(user) { @>
-            <>
+            <tr>
                 <td><@= user.userID @></td>
                 <td><@= user.firstName @></td>
                 <td><@= user.lastName @></td>
@@ -59,11 +59,10 @@
                 <td>
                     <a href="#editUser/<@= user.userID @>">Edit</a>
                 </td>
-                <@ if (user.role.userRole != "Admin") { @>
+
                 <td>
                 <a href="#deleteUser/<@= user.userID @>">Delete</a>
                 </td>
-                <@ } @>
             </tr>
             <@ }); @>
             </tbody>
