@@ -102,7 +102,7 @@ $(function () {
             user.set('karma', $('#karma').val());
             user.set('userRole', $('#userRole').val());
 
-            user.save();
+            user.save({async: false});
             window.location.hash = 'users';
         }
     });
@@ -130,7 +130,7 @@ $(function () {
         deleteUser: function(id) {
             var user = new UserModel;
             user.set('id', id);
-            user.destroy();
+            user.destroy({async: false});
             window.location.hash = 'users';
         }
     });

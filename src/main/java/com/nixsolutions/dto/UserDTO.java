@@ -6,6 +6,7 @@ import java.sql.Date;
 
 public class UserDTO {
     private Long id;
+    private boolean async;
     private Long userID;
     private String firstName;
     private String lastName;
@@ -260,6 +261,14 @@ public class UserDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isAsync() {
+        return async;
+    }
+
+    public void setAsync(boolean async) {
+        this.async = async;
     }
 
     public UserDTO() {
