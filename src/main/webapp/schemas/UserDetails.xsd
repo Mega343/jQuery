@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8080/soap"
+           elementFormDefault="qualified"
+           targetNamespace="http://localhost:8080/soap">
+
+    <!-- Create user request -->
+    <xs:element name="createUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstName" type="xs:string" />
+                <xs:element name="lastName" type="xs:string" />
+                <xs:element name="email" type="xs:string" />
+                <xs:element name="password" type="xs:string" />
+                <xs:element name="phoneNumber" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Create user response -->
+    <xs:element name="createUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userID" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Update user request -->
+    <xs:element name="updateUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userID" type="xs:long" />
+                <xs:element name="firstName" type="xs:string" />
+                <xs:element name="lastName" type="xs:string" />
+                <xs:element name="email" type="xs:string" />
+                <xs:element name="password" type="xs:string" />
+                <xs:element name="phoneNumber" type="xs:string" />
+                <xs:element name="karma" type="xs:int" />
+                <xs:element name="userRole" type="xs:string" />
+                <xs:element name="addressID" type="xs:long" />
+                <xs:element name="houseNumber" type="xs:string" />
+                <xs:element name="flatNumber" type="xs:string" />
+                <xs:element name="cityName" type="xs:string" />
+                <xs:element name="streetName" type="xs:string" />
+                <xs:element name="documentID" type="xs:int" />
+                <xs:element name="documentType" type="xs:string" />
+                <xs:element name="series" type="xs:string" />
+                <xs:element name="number" type="xs:int" />
+                <xs:element name="issuedBy" type="xs:string" />
+                <xs:element name="dateOfIssue" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Update user response -->
+    <xs:element name="updateUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userID" type="xs:long" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

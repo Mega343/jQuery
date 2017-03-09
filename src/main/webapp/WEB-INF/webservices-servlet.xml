@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:sws="http://www.springframework.org/schema/web-services"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/web-services
+    http://www.springframework.org/schema/web-services/web-services.xsd">
+
+    <context:component-scan base-package="com.nixsolutions.web.controller.soap" />
+    <sws:annotation-driven />
+
+    <bean id="defaultWsdl11Definition" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">
+        <property name="schema">
+            <bean class="org.springframework.xml.xsd.SimpleXsdSchema">
+                <property name="xsd" value="schemas/UserDetails.xsd"/>
+            </bean>
+        </property>
+        <property name="portTypeName" value="UserPort"/>
+        <property name="locationUri" value="/soap"/>
+        <property name="targetNamespace" value="http://localhost:8080/soap"/>
+    </bean>
+</beans>
