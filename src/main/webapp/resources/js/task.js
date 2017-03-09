@@ -58,7 +58,7 @@ $(function () {
             user.set('phoneNumber', $('#phoneNumber').val());
             user.set('password', $('#password').val());
             user.set('confirmPassword', $('#confirmPassword').val());
-            user.save();
+            user.save({async: false});
             window.location.hash = 'users';
         }
     });
