@@ -1,4 +1,4 @@
-
+<%@ page import="java.util.ArrayList, com.nixsolutions.model.User"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +37,7 @@
             </tr>
             </thead>
             <tbody>
+
             <@ _.each(users, function(user) { @>
             <>
                 <td><@= user.userID @></td>

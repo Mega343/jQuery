@@ -17,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Controller
+@Path("/user")
 public class UserController {
 
     @Autowired
