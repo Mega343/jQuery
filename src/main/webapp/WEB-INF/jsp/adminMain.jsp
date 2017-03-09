@@ -95,7 +95,7 @@
         </div>
     </script>
 
-    <script type="text/template" id="editUser">
+<script type="text/template" id="editUser">
         <div class="" data-example-id="basic-forms">
             <form>
                 <input type="hidden" id="userID" value="<@= user.userID @>">
@@ -118,45 +118,45 @@
                     <label for="password">Confirm Password</label> <textarea class="form-control" rows="1" id="confirmPassword"><@= user.password @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="cityName">City Name</label> <textarea class="form-control" rows="1" id="cityName"><@= user.cityName @></textarea>
+                    <label for="cityName">City Name</label> <textarea class="form-control" rows="1" id="cityName"><@= user.address.cityName @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="streetName">Street Name</label> <textarea class="form-control" rows="1" id="streetName"><@= user.streetName @></textarea>
+                    <label for="streetName">Street Name</label> <textarea class="form-control" rows="1" id="streetName"><@= user.address.streetName @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="houseNumber">House Number</label> <textarea class="form-control" rows="1" id="houseNumber"><@= user.houseNumber @></textarea>
+                    <label for="houseNumber">House Number</label> <textarea class="form-control" rows="1" id="houseNumber"><@= user.address.houseNumber @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="flatNumber">Flat Number</label> <textarea class="form-control" rows="1" id="flatNumber"><@= user.flatNumber @></textarea>
+                    <label for="flatNumber">Flat Number</label> <textarea class="form-control" rows="1" id="flatNumber"><@= user.address.flatNumber @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="addressID">Address ID</label> <textarea readonly class="form-control" rows="1" id="addressID"><@= user.addressID @></textarea>
+                    <label for="addressID">Address ID</label> <textarea readonly class="form-control" rows="1" id="addressID"><@= user.address.addressID @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="documentID">Document ID</label> <textarea readonly class="form-control" rows="1" id="documentID"><@= user.documentID @></textarea>
+                    <label for="documentID">Document ID</label> <textarea readonly class="form-control" rows="1" id="documentID"><@= user.document.documentID @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="documentType">Document Type</label> <textarea class="form-control" rows="1" id="documentType"><@= user.documentType @></textarea>
+                    <label for="documentType">Document Type</label> <textarea class="form-control" rows="1" id="documentType"><@= user.document.documentType.documentType @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="series">series</label> <textarea class="form-control" rows="1" id="series"><@= user.series @></textarea>
+                    <label for="series">series</label> <textarea class="form-control" rows="1" id="series"><@= user.document.series @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="number">Number</label> <textarea class="form-control" rows="1" id="number"><@= user.number @></textarea>
+                    <label for="number">Number</label> <textarea class="form-control" rows="1" id="number"><@= user.document.number @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="issuedBy">issued By</label> <textarea class="form-control" rows="1" id="issuedBy"><@= user.issuedBy @></textarea>
+                    <label for="issuedBy">issued By</label> <textarea class="form-control" rows="1" id="issuedBy"><@= user.document.issuedBy @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="dateOfIssue">dateOfIssue</label> <textarea class="form-control" rows="1" id="dateOfIssue"><@= user.dateOfIssue @></textarea>
+                    <label for="dateOfIssue">dateOfIssue</label> <textarea class="form-control" rows="1" id="dateOfIssue"><@= user.document.dateOfIssue @></textarea>
                 </div>
                 <div class="form-group">
                     <label for="karma">karma</label> <textarea class="form-control" rows="1" id="karma"><@= user.karma @></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="userRole">User role</label> <textarea class="form-control" rows="1" id="userRole"><@= user.userRole @></textarea>
+                    <label for="userRole">User role</label> <textarea class="form-control" rows="1" id="userRole"><@= user.role.userRole @></textarea>
                 </div>
-
+ 
                 <button type="submit" id="updateSbmt" class="btn btn-success">Update</button>
             </form>
         </div>

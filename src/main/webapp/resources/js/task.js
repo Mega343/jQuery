@@ -81,6 +81,7 @@ $(function () {
         submitForm: function() {
             var user = new UserModel();
             user.set('userID', $('#userID').val());
+            user.set('id', $('#userID').val());
             user.set('firstName', $('#firstName').val());
             user.set('lastName', $('#lastName').val());
             user.set('email', $('#email').val());
@@ -101,7 +102,7 @@ $(function () {
             user.set('karma', $('#karma').val());
             user.set('userRole', $('#userRole').val());
 
-            user.save({async: false});
+            user.save();
             window.location.hash = 'users';
         }
     });
@@ -130,6 +131,7 @@ $(function () {
             var user = new UserModel;
             user.set('id', id);
             user.destroy();
+            window.location.hash = 'users';
         }
     });
 

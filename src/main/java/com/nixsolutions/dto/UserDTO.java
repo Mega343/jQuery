@@ -5,7 +5,7 @@ import com.nixsolutions.model.*;
 import java.sql.Date;
 
 public class UserDTO {
-
+    private Long id;
     private Long userID;
     private String firstName;
     private String lastName;
@@ -252,6 +252,14 @@ public class UserDTO {
 
     public String getConfirmPassword() {
         return confirmPassword;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public UserDTO() {
