@@ -1,4 +1,6 @@
-<%@ page import="java.util.ArrayList, com.nixsolutions.model.User"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +12,22 @@
     <meta name="Arthur Segeda" content="">
     <link rel="icon" href="/resources/images/icon.png">
 
-    <script src="/resources/js/jquery.js"></script>
-    <script src="/resources/js/underscore.js"></script>
-    <script src="/resources/js/backbone.js"></script>
+<c:url value="/resources/js/jquery.js" var="jqueryJsUrl"/>
+<script src="${jqueryJsUrl}"></script>
+<c:url value="/resources/js/underscore.js" var="underscoreJsUrl"/>
+<script src="${underscoreJsUrl}"></script>
+<c:url value="/resources/js/backbone.js" var="backboneJsUrl"/>
+<script src="${backboneJsUrl}"></script>
 
     <title>Users</title>
 
+
     <!-- Bootstrap core CSS -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <c:url value="/resources/css/bootstrap.min.css" var="bootstrapCssUrl"/>
+    <link href="${bootstrapCssUrl}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/resources/dashboard/dashboard.css" type="text/css" rel="stylesheet">
+    <c:url value="/resources/dashboard/dashboard.css" var="dashboardCssUrl"/>
+    <link href="${dashboardCssUrl}" type="text/css" rel="stylesheet">
 
         <script type="text/template" id="users">
         <table class="table">
@@ -155,8 +163,8 @@
             </form>
         </div>
     </script>
-
-    <script src="/resources/js/task.js"></script>
+    <c:url value="/resources/js/task.js" var="taskJsUrl"/>
+    <script src="${taskJsUrl}"></script>
 </head>
 
 <body>
@@ -179,6 +187,7 @@
 <!-- Bootstrap core JavaScript================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
+<c:url value="/resources/js/bootstrap.min.js" var="bootstrapJsUrl"/>
+<script src="${bootstrapJsUrl}"></script>
 </body>
 </html>
