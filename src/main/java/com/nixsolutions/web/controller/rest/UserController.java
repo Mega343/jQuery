@@ -47,7 +47,6 @@ public class UserController {
     }
 
     @POST
-    @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String saveUser(UserDTO userDTO) {
@@ -58,8 +57,8 @@ public class UserController {
     }
 
 
-    @POST
-    @Path("/update")
+    @PUT
+    @Path("{user_id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String updateUser(UserDTO userDTO) throws UserControllerException {

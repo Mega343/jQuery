@@ -4,15 +4,22 @@ function setMenu(menuItem) {
     $(menuItem).addClass('active');
 }
 $(function () {
+
+    _.templateSettings = {
+        interpolate: /\<\@\=(.+?)\@\>/gim,
+        evaluate: /\<\@(.+?)\@\>/gim,
+        escape: /\<\@\-(.+?)\@\>/gim
+    };
+
     var UserModel  = Backbone.Model.extend({
         url: function() {
-            return "/user/" + (this.id ? this.id : '');
+            return "rest/user/" + (this.id ? this.id : '');
         }
     });
 
     var UsersCollection = Backbone.Collection.extend({
         model: UserModel,
-        url: "users"
+        url: "rest/user/users"
     });
 
     var users = new UsersCollection();
@@ -51,8 +58,8 @@ $(function () {
             user.set('phoneNumber', $('#phoneNumber').val());
             user.set('password', $('#password').val());
             user.set('confirmPassword', $('#confirmPassword').val());
-            user.save({async: false});
-            window.location.hash = 'products';
+            user.save();
+            window.location.hash = 'users';
         }
     });
     var EditUserView = Backbone.View.extend({
@@ -63,7 +70,7 @@ $(function () {
         template: _.template($('#editUser').html()),
         initialize: function (options) {
             this.user = new UserModel();
-            this.user.set('userID', options.id);
+            this.user.set('id', options.id);
             this.user.fetch({async: false});
             this.render();
         },
@@ -110,7 +117,7 @@ $(function () {
         initialize: function () {
             Backbone.history.start();
         },
-        products: function () {
+        users: function () {
             new UsersView();
         },
         addUser: function () {
@@ -121,9 +128,8 @@ $(function () {
         },
         deleteUser: function(id) {
             var user = new UserModel;
-            user.set('userID', id);
+            user.set('id', id);
             user.destroy();
-            window.location.hash = 'users';
         }
     });
 
