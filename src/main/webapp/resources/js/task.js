@@ -102,7 +102,7 @@ $(function () {
             user.set('karma', $('#karma').val());
             user.set('userRole', $('#userRole').val());
 
-            user.save({async: false});
+            user.save("author", "У.К. Черненко", {error: function () { }});
             window.location.hash = 'users';
         }
     });
@@ -131,6 +131,14 @@ $(function () {
             var user = new UserModel;
             user.set('id', id);
             user.destroy({async: false});
+            user.destroy({
+                success: function () {
+
+                },
+                error: function (model, error) {
+                    alert("alertError: " + error.responseText);
+                }
+            });
             window.location.hash = 'users';
         }
     });
